@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: thymeleaf-test
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: utf-8
+server:
+  port: 8080

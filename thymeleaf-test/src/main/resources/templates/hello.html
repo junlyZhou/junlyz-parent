@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecuity3">
+<head>
+    <meta charset="UTF-8"/>
+    <title>测试模板</title>
+</head>
+<body>
+    <h1 th:inline="text">hello.v.2</h1>
+    <p th:text="${hello}"></p>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.name}">name</td>
+            <td th:text="${user.age}">age</td>
+        </tr>
+    </table>
+    <script th:inline="none">
+        var b = [['a', 'b'], ['c', 'd']];
+    </script>
+    <script>
+        var abc = [[${names}]];
+        console.log(abc)
+    </script>
+</body>
+</html>
